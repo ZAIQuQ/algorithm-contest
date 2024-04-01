@@ -27,7 +27,7 @@ int128 ~ 10^36
 `max{高精，高精}`
 
 ```cpp
-#define A 1000000000000000
+#define A 1000000000000000 （1e15）
 struct bint{
 	long long s[10];
 	bint(long long num = 0){
@@ -98,7 +98,7 @@ int128 operator + (int128 a,int128 b)//重载运算符
     k.low%=p;
     return k;
 }
-int128 operator * (int128 a,int b)
+int128 operator * (int128 a,int b) // 这里控制b为2，不会炸，如果b是任意整数会炸
 {
 	int128 k;
 	k.low=0,k.hig=0;
